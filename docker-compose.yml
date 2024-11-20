@@ -1,0 +1,48 @@
+name: test-bootstrap
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8383:80"
+    networks:
+      - test-bootstrap
+    volumes:
+      - ./front:/var/www/html
+      - .env:/var/www/html/.env
+    env_file:
+      - .env
+
+  mysql:
+    container_name: mysql-server-new
+    image: 'mysql:8.0'
+    ports:
+      - ${DB_PORT:-3306}:3306
+    networks:
+      - test-bootstrap
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PWD}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PWD}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: php-my-admin-new
+    image: 'phpmyadmin:latest'
+    ports:
+      - 8081:80
+    networks:
+      - test-bootstrap
+    environment:
+      PMA_HOST: ${DB_HOST}
+      PMA_USER: "${DB_USER}"
+      PMA_PASSWORD: ${DB_PWD}
+volumes:
+  mysql-data:
+    driver: local
+networks:
+  test-bootstrap:
+    driver: bridge
