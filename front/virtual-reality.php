@@ -1,11 +1,9 @@
-<?php
-
+<?php 
 session_start();
 require_once('./config.php');
 
 $layout = 'virtual-reality';
-$template = basename(__FILE__);
+$template = basename(__FILE__); 
 
-render_view($template,$layout);
-
+render_view($template, $layout);
 ?>

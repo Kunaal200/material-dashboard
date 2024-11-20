@@ -22,18 +22,10 @@
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
 
-<body class="<?php echo $class ?? "bg-grey-200" ?>">
-    <?php  $header = BASEPATH . '/partials/auth/header.php';  ?>
-
-<main class="main-content mt-0">
-    <?php include_once($header)?>
-    <?php include_once($view); ?>
-</main>
-
-
+<body class="g-sidenav-show  bg-gray-200">
 
 <!--   Core JS Files   -->
- <script src="../assets/js/core/popper.min.js"></script>
+<script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
@@ -53,3 +45,4 @@
 </body>
 
 </html>
+
