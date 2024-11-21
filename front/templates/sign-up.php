@@ -1,5 +1,4 @@
-
-<main class="main-content  mt-0">
+<main class="main-content  mt-0" id="signupForm">
     <section>
         <div class="page-header min-vh-100">
             <div class="container">
@@ -18,15 +17,15 @@
                                 <form role="form">
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">Name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" name="name" id="name">
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">Email</label>
-                                        <input type="email" class="form-control">
+                                        <input type="email" class="form-control" name="email"  id="email">
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">Password</label>
-                                        <input type="password" class="form-control">
+                                        <input type="password" class="form-control" name="password" id="password">
                                     </div>
                                     <div class="form-check form-check-info text-start ps-0">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
@@ -35,7 +34,7 @@
                                         </label>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0">Sign Up</button>
+                                        <button type="submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0" name="submitbtn" id="submitbtn">Sign Up</button>
                                     </div>
                                 </form>
                             </div>
@@ -51,4 +50,4 @@
             </div>
         </div>
     </section>
-</main>
+  </main>
