@@ -1,4 +1,3 @@
-<main class="main-content  mt-0">
     <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
         <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container my-auto">
@@ -30,16 +29,16 @@
                         <div class="card-body">
                             <form role="form" class="text-start" id="validate-form">
                                 <div class="input-group input-group-outline my-3">
-                                    <label class="form-label" for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email">
-                                    <div id="error1"></div>
+                                    <label class="form-label" for="email"></label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
                                 </div>
+                                <div id="email-error"></div>
 
                                 <div class="input-group input-group-outline mb-3">
-                                    <label class="form-label" for="pwd">Password</label>
+                                    <label class="form-label" for="pwd"></label>
                                     <input type="password" class="form-control" id="pwd" name="pwd">
-                                    <div id="error2"></div>
                                 </div>
+                                <div id="pwd-error"></div>
 
                                 <div class="form-check form-switch d-flex align-items-center mb-3">
                                     <input class="form-check-input" type="checkbox" id="rememberMe pwd" checked>
@@ -58,5 +57,4 @@
                 </div>
             </div>
         </div>
-
     </div>

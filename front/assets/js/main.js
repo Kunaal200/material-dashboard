@@ -11,6 +11,7 @@ $(document).ready(function () {
                 maxlength: 15
             }
         },
+
         messages: {
             email: {
                 required: "We need your email address to contact you",
@@ -19,6 +20,13 @@ $(document).ready(function () {
             pwd: {
                 required: "Please provide a password",
                 minlength: "Your password must be at least 6 characters long"
+            }
+        },
+        errorPlacement: function (error, element) {
+            if (element.attr("name") == "email") {
+                error.appendTo("#email-error");
+            } else if (element.attr("name") == "pwd") {
+                error.appendTo("#pwd-error");
             }
         }
     });
