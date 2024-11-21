@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../Users/ravi/Downloads/material-dashboard-master"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "material-dashboard-master"
+	}
+}
