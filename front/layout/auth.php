@@ -22,18 +22,24 @@
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
 </head>
 
+<style>
+  .error {
+    color: #C00;
+  }
+</style>
+
 <body class="<?php echo $class ?? "bg-grey-200" ?>">
-    <?php  $header = BASEPATH . '/partials/auth/header.php';  ?>
+  <?php $header = BASEPATH . '/partials/auth/header.php';  ?>
 
-<main class="main-content mt-0">
-    <?php include_once($header)?>
+  <main class="main-content mt-0">
+    <?php include_once($header) ?>
     <?php include_once($view); ?>
-</main>
+  </main>
 
 
 
-<!--   Core JS Files   -->
- <script src="../assets/js/core/popper.min.js"></script>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
@@ -50,6 +56,9 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.min.js?v=3.0.0"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js "></script>
+  <script src="../assets/js/main.js"></script>
 </body>
 
 </html>
