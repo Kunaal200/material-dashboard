@@ -8,7 +8,7 @@
     define('BASEPATH', __DIR__);
 
     require_once('./vendor/autoload.php');
-    require_once('./function.php');
+    require_once('./functions.php');
     $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
     $dotenv->load();
 
