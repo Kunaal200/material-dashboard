@@ -32,7 +32,7 @@
   <?php $header = BASEPATH . '/partials/auth/header.php';  ?>
 
   <main class="main-content mt-0">
-    <?php //include_once($header) ?>
+    <?php //include_once($header) jkskla ?>
     <?php include_once($view); ?>
   </main>
 
