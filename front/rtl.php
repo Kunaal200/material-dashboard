@@ -1,11 +1,9 @@
-<?php
+<?php 
+    session_start();
+    require_once('./config.php');
 
-session_start();
-require_once('./config.php');
+    $layout = 'rtl';
+    $template = basename(__FILE__);
 
-$layout = 'rtl';
-$template = basename(__FILE__);
-
-render_view($template,$layout);
-
+    render_view($template, $layout);
 ?>

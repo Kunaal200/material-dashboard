@@ -29,16 +29,17 @@
                         <div class="card-body">
                             <form role="form" class="text-start" id="validate-form">
                                 <div class="input-group input-group-outline my-3">
-                                    <label class="form-label" for="email"></label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email">
+                                    <div class="error"></div>
                                 </div>
-                                <div id="email-error"></div>
+                                
 
                                 <div class="input-group input-group-outline mb-3">
-                                    <label class="form-label" for="pwd"></label>
+                                    <label class="form-label" for="pwd">Password</label>
                                     <input type="password" class="form-control" id="pwd" name="pwd">
+                                    <div class="error"></div>
                                 </div>
-                                <div id="pwd-error"></div>
 
                                 <div class="form-check form-switch d-flex align-items-center mb-3">
                                     <input class="form-check-input" type="checkbox" id="rememberMe pwd" checked>
