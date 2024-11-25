@@ -22,9 +22,6 @@ $(document).ready(function () {
         minlength: "Your password must be at least 6 characters long",
       },
     },
-    errorPlacement: function (error, element) {
-      $(element).parent().find('.error').html(error);
-    },
   });
 
   $("#signupForm").validate({
