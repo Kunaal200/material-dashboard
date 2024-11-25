@@ -24,8 +24,8 @@
 
     $conn1 = new mysqli($mysql['host'], $mysql['user'], $mysql['password'], $mysql['db']);
 
-    // if ($conn1->connect_error) {
-    //     die("Connection failed: " . $conn1->connect_error);
-    // }
-    // echo "Connected successfully";
+    if ($conn1->connect_error) {
+        die("Connection failed: " . $conn1->connect_error);
+    }
+    echo "Connected successfully";
 ?>

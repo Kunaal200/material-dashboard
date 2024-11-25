@@ -27,18 +27,18 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form role="form" class="text-start" id="validate-form">
+                            <form role="form" class="text-start" id="validate-form" action="/">
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label" for="email">Email</label>
                                     <input type="email" class="form-control" id="email" name="email">
-                                    <div class="error"></div>
+                                    <label class="error w-100" for="email"></label>
                                 </div>
                                 
 
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label" for="pwd">Password</label>
                                     <input type="password" class="form-control" id="pwd" name="pwd">
-                                    <div class="error"></div>
+                                    <label class="error w-100" for="pwd"></label>
                                 </div>
 
                                 <div class="form-check form-switch d-flex align-items-center mb-3">
@@ -46,7 +46,7 @@
                                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign in</button>
+                                    <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" name="submit" value="signin">Sign in</button>
                                 </div>
                                 <p class="mt-4 text-sm text-center">
                                     Don't have an account?
