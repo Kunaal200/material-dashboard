@@ -14,7 +14,7 @@
                                 <p class="mb-0">Enter your email and password to register</p>
                             </div>
                             <div class="card-body">
-                                <form role="form" class="text-start" id="signupForm">
+                                <form role="form" class="text-start" id="signupForm" method="POST">
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">Name</label>
                                         <input type="text" class="form-control" name="name" id="name">
