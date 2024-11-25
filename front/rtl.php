@@ -3,6 +3,7 @@
     require_once('./config.php');
 
     $layout = 'dashboard';
+    $layout = 'dashboard';
     $template = basename(__FILE__);
 
     render_view($template, $layout);

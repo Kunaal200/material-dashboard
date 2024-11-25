@@ -27,6 +27,9 @@
     $header = BASEPATH . '/partials/backend/header.php';
     $sidebar = BASEPATH . '/partials/backend/sidebar.php';
     $footer = BASEPATH . '/partials/backend/footer.php';
+    $header = BASEPATH . '/partials/backend/header.php';
+    $sidebar = BASEPATH . '/partials/backend/sidebar.php';
+    $footer = BASEPATH . '/partials/backend/footer.php';
 ?>  
   <?php include_once($sidebar); ?>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
@@ -43,6 +46,14 @@
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <?php 
+    // echo $template;
+    // $fileName = basename(__FILE__);
+    $assetPath = BASEPATH . '/assets/custom/'.$template;
+    if(file_exists($assetPath)){
+      include_once($assetPath);
+    }
+  ?>
   <?php 
     // echo $template;
     // $fileName = basename(__FILE__);
