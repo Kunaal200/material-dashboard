@@ -1,4 +1,4 @@
-<main class="main-content  mt-0" id="signupForm">
+<main class="main-content  mt-0">
     <section>
         <div class="page-header min-vh-100">
             <div class="container">
@@ -14,18 +14,26 @@
                                 <p class="mb-0">Enter your email and password to register</p>
                             </div>
                             <div class="card-body">
-                                <form role="form">
+                                <form role="form" class="text-start" id="signupForm">
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">Name</label>
                                         <input type="text" class="form-control" name="name" id="name">
+                                        <label class="error w-100" for="name"></label>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Email</label>
+                                        <label class="form-label" for="email">Email</label>
                                         <input type="email" class="form-control" name="email"  id="email">
+                                        <label class="error w-100" for="email"></label>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
                                         <label class="form-label">Password</label>
                                         <input type="password" class="form-control" name="password" id="password">
+                                        <label class="error w-100" for="password"></label>
+                                    </div>
+                                    <div class="input-group input-group-outline mb-3">
+                                        <label class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" name="cpassword" id="cpassword">
+                                        <label class="error w-100" for="cpassword"></label>
                                     </div>
                                     <div class="form-check form-check-info text-start ps-0">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>

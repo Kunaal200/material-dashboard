@@ -31,18 +31,18 @@
                                 <div class="input-group input-group-outline my-3">
                                     <label class="form-label" for="email">Email</label>
                                     <input type="email" class="form-control" id="email" name="email">
-                                    <div class="error"></div>
+                                    <label class="error w-100" for="email"></label>
                                 </div>
                                 
 
                                 <div class="input-group input-group-outline mb-3">
                                     <label class="form-label" for="pwd">Password</label>
                                     <input type="password" class="form-control" id="pwd" name="pwd">
-                                    <div class="error"></div>
+                                    <label class="error w-100" for="pwd"></label>
                                 </div>
 
                                 <div class="form-check form-switch d-flex align-items-center mb-3">
-                                    <input class="form-check-input" type="checkbox" id="rememberMe pwd" checked>
+                                    <input class="form-check-input" type="checkbox" id="rememberMe" checked>
                                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                                 </div>
                                 <div class="text-center">

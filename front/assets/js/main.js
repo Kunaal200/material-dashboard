@@ -41,6 +41,10 @@ $(document).ready(function () {
         required: true,
         minlength: 6,
       },
+      cpassword: {
+        required: true,
+        minlength: 6,
+      },
     },
     messages: {
       name: {
@@ -54,6 +58,10 @@ $(document).ready(function () {
       password: {
         required: "Please enter your password",
         minlength: "Password must be at least 6 characters long",
+      },
+      cpassword: {
+        required: "Please enter your confirm password",
+        minlength: "Confirm Password must be at least 6 characters long",
       },
     },
   });
