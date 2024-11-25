@@ -18,9 +18,10 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submitbtn') {
         $insert->bind_param("ss", $_POST['email'], $_POST['password']);
 
         $insert->execute();
-        echo $conn1->insert_id;
+        // echo $conn1->insert_id;
         $insert->close();
     }
 }
 
 render_view($template, $layout);
+?>

@@ -29,11 +29,11 @@
 </style>
 
 <body class="<?php echo $class ?? "bg-grey-200" ?>">
-  <?php $header = BASEPATH . '/partials/auth/header.php';  ?>
+  <?php $footer = BASEPATH . '/partials/auth/footer.php';  ?>
 
   <main class="main-content mt-0">
-    <?php //include_once($header) jkskla ?>
     <?php include_once($view); ?>
+    <?php include_once($footer) ?>
   </main>
 
 
