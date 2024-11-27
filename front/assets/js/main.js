@@ -28,7 +28,6 @@
 					  required: true,
 					},
 					cpassword: {
-					  minlength: 6,
 					  equalTo: "#password",
 					},
 				  },
@@ -45,10 +44,6 @@
 					  required: "Please enter your password",
 					  minlength: "Password must be at least 6 characters long",
 					},
-					cpassword: {
-					  required: "Please enter your confirm password",
-					  minlength: "Confirm Password must be at least 6 characters long",
-					},
 				}
 			});
 		},
@@ -64,35 +59,55 @@
 			signup.init();
 		}
 	})
-}) (jQuery)
+}) (jQuery);
 
+(function($) {
+	"use strict";
+	var signin = {
+		formElm: $('#signinForm'),
+		submit: function(){
+			this.formElm.on('submit', function(e){
+				e.preventDefault();
+				if(signin.formElm.valid()) {
+					console.log('signin called');
+				}
+			})
+		},
+		validate: function() {
+			this.formElm.validate({
+				rules: {
+					email: {
+					  required: true,
+					  email: true,
+					},
+					pwd: {
+					  required: true,
+					  minlength: 6,
+					  maxlength: 15,
+					},
+			  },
+		  
+			  messages: {
+				email: {
+				  required: "We need your email address to contact you",
+				  email: "Your email address must be in the format of name@domain.com",
+				},
+				pwd: {
+				  required: "Please provide a password",
+				  minlength: "Your password must be at least 6 characters long",
+				},
+			  }
+			})
+		},
+		init: function() {
+			this.validate();
+			this.submit();
+		},
+	};
 
-
-
-
-$(document).ready(function () {
-  $("#validate-form").validate({
-	rules: {
-	  	email: {
-			required: true,
-			email: true,
-	  	},
-	  	pwd: {
-			required: true,
-			minlength: 6,
-			maxlength: 15,
-	  	},
-	},
-
-	messages: {
-	  email: {
-		required: "We need your email address to contact you",
-		email: "Your email address must be in the format of name@domain.com",
-	  },
-	  pwd: {
-		required: "Please provide a password",
-		minlength: "Your password must be at least 6 characters long",
-	  },
-	},
-  });
-});
+	$(document). ready(function(){
+		if($('#signinForm'). length > 0) {
+			signin.init();
+		}
+	})
+}) (jQuery); 

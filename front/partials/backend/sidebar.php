@@ -10,37 +10,37 @@
   <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active bg-gradient-dark text-white" href="../pages/dashboard.html">
+        <a class="nav-link active bg-gradient-dark text-white" href="dashboard">
           <i class="material-symbols-rounded opacity-5">dashboard</i>
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/tables.html">
+        <a class="nav-link text-dark" href="tables">
           <i class="material-symbols-rounded opacity-5">table_view</i>
           <span class="nav-link-text ms-1">Tables</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/billing.html">
+        <a class="nav-link text-dark" href="billing">
           <i class="material-symbols-rounded opacity-5">receipt_long</i>
           <span class="nav-link-text ms-1">Billing</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/virtual-reality.html">
+        <a class="nav-link text-dark" href="virtual-reality">
           <i class="material-symbols-rounded opacity-5">view_in_ar</i>
           <span class="nav-link-text ms-1">Virtual Reality</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/rtl.html">
+        <a class="nav-link text-dark" href="rtl">
           <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
           <span class="nav-link-text ms-1">RTL</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/notifications.html">
+        <a class="nav-link text-dark" href="notifications">
           <i class="material-symbols-rounded opacity-5">notifications</i>
           <span class="nav-link-text ms-1">Notifications</span>
         </a>
@@ -49,19 +49,19 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/profile.html">
+        <a class="nav-link text-dark" href="profile">
           <i class="material-symbols-rounded opacity-5">person</i>
           <span class="nav-link-text ms-1">Profile</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/sign-in.html">
+        <a class="nav-link text-dark" href="sign-in">
           <i class="material-symbols-rounded opacity-5">login</i>
           <span class="nav-link-text ms-1">Sign In</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark" href="../pages/sign-up.html">
+        <a class="nav-link text-dark" href="sign-up">
           <i class="material-symbols-rounded opacity-5">assignment</i>
           <span class="nav-link-text ms-1">Sign Up</span>
         </a>
