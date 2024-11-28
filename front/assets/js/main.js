@@ -8,6 +8,50 @@
 			this.formElm.on('submit',function(e){
 				e.preventDefault();
 				if(signup.formElm.valid()){
+					let formData = signup.formElm.serializeArray()
+					formData.push({
+						name: "action",
+						value: "signup"
+					})
+					$.ajax({
+						type: "POST",
+						url: "/sign-up",
+						data: formData,
+						dataType: "json",
+						success: function(result){
+						   	console.log(result);
+							// if(result.success){
+							// 	$('#submitbtn')
+							// 	.html("Successfully Signed Up!!")
+							// 	.removeClass("bg-gradient-dark")
+							// 	.addClass("bg-success")
+							// 	.addClass("text-white");
+							// }else{
+							// 	$('#submitbtn')
+							// 	.html("Oops!! Error!!")
+							// 	.removeClass("bg-gradient-dark")
+							// 	.addClass("bg-danger")
+							// 	.addClass("text-white");
+							// }
+						   	if(!isJson(result)){
+								result = $.parseJSON(result);
+						   	}
+							// result = $.parseJSON(result);
+							if(result.success){
+								$('#submitbtn')
+								.html("Successfully Signed Up!!")
+								.removeClass("bg-gradient-dark")
+								.addClass("bg-success")
+								.addClass("text-white");
+							}else{
+								$('#submitbtn')
+								.html("Oops!! Error!!")
+								.removeClass("bg-gradient-dark")
+								.addClass("bg-danger")
+								.addClass("text-white");
+							}
+						}
+					});
 					console.log('Submit Called.');
 				}
 			});
@@ -58,6 +102,21 @@
 		},
 	};
 
+
+	function isJson(str) {
+		if(typeof str === 'object'){
+			return true;
+		}else{
+			try {
+				JSON.parse(str);
+			} catch (e) {
+				console.log(e);
+				return false;
+			}
+			return true;
+		}
+		
+	}
 
 	$(document).ready(function () {
 		if($('#signupForm').length > 0){
