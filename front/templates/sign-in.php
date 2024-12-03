@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form role="form" class="text-start" id="validate-form" action="/">
+                        <form role="form" class="text-start" id="signinForm" method="POST">
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label" for="email">Email</label>
                                 <input type="email" class="form-control" id="email" name="email">
@@ -46,7 +46,8 @@
                                 <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" name="submit" value="signin">Sign in</button>
+                                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2" name="submit" value="signin" id="submitbtn">Sign in</button>
+                                <label class="error form-error w-100"></label>
                             </div>
                             <p class="mt-4 text-sm text-center">
                                 Don't have an account?

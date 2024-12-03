@@ -43,12 +43,16 @@
 								.removeClass("bg-gradient-dark")
 								.addClass("bg-success")
 								.addClass("text-white");
+
+								$('#submitbtn').parent().find('.form-error').css('display', 'none').html('');
 							}else{
 								$('#submitbtn')
 								.html("Oops!! Error!!")
 								.removeClass("bg-gradient-dark")
 								.addClass("bg-danger")
 								.addClass("text-white");
+
+								$('#submitbtn').parent().find('.form-error').css('display', 'block').html(result.message);
 							}
 						}
 					});
@@ -102,6 +106,96 @@
 		},
 	};
 
+	var signin = {
+		formElm: $('#signinForm'),
+		submit: function(){
+			this.formElm.on('submit',function(e){
+				e.preventDefault();
+				if(signin.formElm.valid()){
+					let formData = signin.formElm.serializeArray()
+					formData.push({
+						name: "action",
+						value: "signin"
+					})
+					$.ajax({
+						type: "POST",
+						url: "/sign-in",
+						data: formData,
+						dataType: "json",
+						success: function(result){
+						   	console.log(result);
+							// if(result.success){
+							// 	$('#submitbtn')
+							// 	.html("Successfully Signed Up!!")
+							// 	.removeClass("bg-gradient-dark")
+							// 	.addClass("bg-success")
+							// 	.addClass("text-white");
+							// }else{
+							// 	$('#submitbtn')
+							// 	.html("Oops!! Error!!")
+							// 	.removeClass("bg-gradient-dark")
+							// 	.addClass("bg-danger")
+							// 	.addClass("text-white");
+							// }
+						   	if(!isJson(result)){
+								result = $.parseJSON(result);
+						   	}
+							// result = $.parseJSON(result);
+							if(result.success){
+								$('#submitbtn')
+								.html("Successfully Signed In!!")
+								.removeClass("bg-gradient-dark")
+								.removeClass("bg-danger")
+								.addClass("bg-success")
+								.addClass("text-white");
+
+								$('#submitbtn').parent().find('.form-error').css('display', 'none').html('');
+							}else{
+								$('#submitbtn')
+								.html("Oops!! Error!!")
+								.removeClass("bg-gradient-dark")
+								.removeClass("bg-success")
+								.addClass("bg-danger")
+								.addClass("text-white");
+
+								$('#submitbtn').parent().find('.form-error').css('display', 'block').html(result.message);
+							}
+						}
+					});
+					console.log('Submit Called.');
+				}
+			});
+		},
+		validate: function(){
+			this.formElm.validate({
+				rules: {
+					email: {
+					  required: true,
+					  email: true,
+					},
+					password: {
+					  minlength: 6,
+					  required: true,
+					}
+				  },
+				messages: {
+					email: {
+					  required: "Please enter your email",
+					  email: "Please enter a valid email address",
+					},
+					password: {
+					  required: "Please enter your password",
+					  minlength: "Password must be at least 6 characters long",
+					}
+				}
+			});
+		},
+		init: function(){
+			this.validate();
+			this.submit();
+		},
+	};
+
 
 	function isJson(str) {
 		if(typeof str === 'object'){
@@ -122,6 +216,12 @@
 		if($('#signupForm').length > 0){
 			signup.init();
 		}
+
+		//Pa$$w0rd!
+		if($('#signinForm').length > 0){
+			signin.init();
+		}
+
 	})
 }) (jQuery)
 

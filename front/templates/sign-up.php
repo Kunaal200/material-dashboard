@@ -43,6 +43,7 @@
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-lg bg-gradient-dark btn-lg w-100 mt-4 mb-0" name="submitbtn" id="submitbtn">Sign Up</button>
+                                        <label class="error form-error w-100"></label>
                                     </div>
                                 </form>
                             </div>
