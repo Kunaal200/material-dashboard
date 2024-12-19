@@ -1,4 +1,5 @@
 <?php 
+
 function render_view($template, $layout, $params = []){
     $view = __DIR__ . '/templates/'. $template;
     $layout = __DIR__ . '/layout/'. $layout . '.php';
@@ -82,5 +83,47 @@ function send_json_response(bool $success = false, string $message = '', array $
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($response);
     exit;
+}
+
+function is_user_logged_in(){
+    if(isset($_SESSION['user_id']) && $_SESSION['user_id'] > 0){
+        return true;
+    }
+
+    return false;
+}
+
+function current_user(){
+    return $_SESSION['user_id'] ?? false;
+}
+
+function get_userdata($user_id = null){
+
+    global $conn1;
+    if(!$user_id){
+        $user_id = current_user();
+    }
+
+    if($user_id){
+        $sql = "SELECT * FROM `userdata` WHERE `user_id` = ?";
+        $select = $conn1-> prepare($sql);
+        $select->bind_param("s", $user_id);
+        $select->execute();
+        $res = $select->get_result();
+        $result = $res->fetch_all(MYSQLI_ASSOC);
+        $select->close();
+
+        $userData = [];
+
+        foreach ($result as $datarow) {
+            $dataKey = $datarow['datakey'];
+            $dataValue = $datarow['datavalue'];
+            $userData[$dataKey] = $dataValue;
+        }
+
+        return $userData;
+    }
+    
+    return [];
 }
 ?>

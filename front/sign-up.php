@@ -2,6 +2,10 @@
 session_start();
 require_once('./config.php');
 
+if(is_user_logged_in()){
+    header('Location: /dashboard/');
+}
+
 $layout = 'auth';
 $template = basename(__FILE__);
 $postData = $_POST;
@@ -41,33 +45,35 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup') {
             $insert_id = $conn1->insert_id;
             $insert->close();
             if($insert_id > 0){
-                $datakey = 'name';
+                $userData = array(
+                    'name' => $name,
+                    'dob' => date('d-m-Y H:i:s')
+                );
+
                 $insertUserData = $conn1->prepare("INSERT INTO userdata (`user_id`, `datakey`, `datavalue`) VALUES (?, ?, ?)");
-                $insertUserData->bind_param("sss", $insert_id, $datakey, $name);
-                $insertUserData->execute();
+                foreach ($userData as $datakey => $datavalue) {
+                    $insertUserData->bind_param("sss", $insert_id, $datakey, $datavalue);
+                    $insertUserData->execute();
+                }
+
                 $insertUserData->close();
 
+                $_SESSION['user'] = array(
+                    'ID' => $insert_id,
+                    'name' => $name,
+                    'email' => $email,
+                    'dob' => $userData['dob']
+                );
+
+                $_SESSION['user_id'] = $insert_id;
+
                 send_json_response(true, '', ['insert_id' => $insert_id]);
+
             }else{
                 $message = "Unexpected signup issue. Please try again later.";
                 send_json_response(false, $message);
             }
         }
-    }
-}
-
-if (isset($_POST['submit']) && $_POST['submit'] == 'submitbtn') {
-    $error = [];
-
-    if (count($error) == 0) {
-
-        $insert = $conn1->prepare("INSERT INTO users (`email`, `password`, `created`, `updated`) VALUES (?, ?, NOW(), NOW())");
-
-        $insert->bind_param("ss", $_POST['email'], $_POST['password']);
-
-        $insert->execute();
-        // echo $conn1->insert_id;
-        $insert->close();
     }
 }
 

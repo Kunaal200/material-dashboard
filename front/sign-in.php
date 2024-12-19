@@ -2,6 +2,10 @@
 session_start();
 require_once('./config.php');
 
+if(is_user_logged_in()){
+    header('Location: /dashboard/');
+}
+
 $layout = 'auth';
 $template = basename(__FILE__); 
 
@@ -22,9 +26,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'signin') {
         $result = $res->fetch_all(MYSQLI_ASSOC);
         $select->close();
 
-        // debug_pre($result);
-
         if(count($result)){
+
+            $user = $result[0]; 
+
+            $userData = get_userdata($user['ID']);
+
+            $user = array_merge($user, $userData);
+
+            $_SESSION['user'] = $user;
+            $_SESSION['user_id'] = $user['ID'];
+
             send_json_response(true, '', $result);
         }else{
             $message = "No user account found. Please check your email id and password.";

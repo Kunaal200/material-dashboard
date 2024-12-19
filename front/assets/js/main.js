@@ -45,6 +45,8 @@
 								.addClass("text-white");
 
 								$('#submitbtn').parent().find('.form-error').css('display', 'none').html('');
+
+								window.location.href = '/dashboard/';
 							}else{
 								$('#submitbtn')
 								.html("Oops!! Error!!")
@@ -150,6 +152,8 @@
 								.addClass("text-white");
 
 								$('#submitbtn').parent().find('.form-error').css('display', 'none').html('');
+
+								window.location.href = '/dashboard/';
 							}else{
 								$('#submitbtn')
 								.html("Oops!! Error!!")
