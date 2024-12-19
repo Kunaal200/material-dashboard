@@ -126,4 +126,16 @@ function get_userdata($user_id = null){
     
     return [];
 }
+
+function get_route(){
+    $url = $_SERVER['REQUEST_URI'];
+
+    $url = strtok($url, '?');
+
+    return $url;
+}
+
+function is_current_route($route = ''){
+    return $route === get_route();
+}
 ?>
