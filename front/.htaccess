@@ -1,6 +1,8 @@
 Options +FollowSymLinks -MultiViews
 # Turn mod_rewrite on
 RewriteEngine On
+ErrorDocument 404   /404.php
+
 RewriteBase /
 
 ## hide .php extension
