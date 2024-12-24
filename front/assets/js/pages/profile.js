@@ -1,23 +1,47 @@
 (function($) {  
 	"use strict";
     
-    var editProfile = {
-        formElm: $('#editProfileForm'),
+    var inlineCardActions = {
+        inlineCard: '',
+
+        saveForm: function(){
+            
+            let formElm = $(inlineCardActions.inlineCard.find('form')[0]);
+            let formData = formElm.serializeArray();
+            console.log(formData);
+
+            formData.forEach(elm => {
+                $('.inline-info-wrapper').find("[data-card='" + elm.name + "']").html(elm.value);
+            });
+
+            
+        },
+
+        resetForm: function(){
+            console.log("resetAction")
+        },
 
         init: function(){
             $(".inline-form-actions").on('click', function(){
-                let card = $(this).parents('.inline-card');
-                card.find('.inline-form-wrapper').toggleClass('d-none');
-                card.find('.inline-info-wrapper').toggleClass('d-none');
-                card.find('.inline-form-actions').toggleClass('d-none');
-            })
+                inlineCardActions.inlineCard = $(this).parents('.inline-card');
+                inlineCardActions.inlineCard.find('.inline-form-wrapper').toggleClass('d-none');
+                inlineCardActions.inlineCard.find('.inline-info-wrapper').toggleClass('d-none');
+                inlineCardActions.inlineCard.find('.inline-form-actions').toggleClass('d-none');
+
+                if($(this).hasClass('inline-form-save-action')){
+                    inlineCardActions.saveForm();
+                }
+
+                if($(this).hasClass('inline-form-cancel-action')){
+                    inlineCardActions.resetForm();
+                }
+
+            });
+
         }
     };
 
     $(document).ready(function () {
-		if($('#editProfileForm').length > 0){
-			editProfile.init();
-		}
-
+		inlineCardActions.init();
 	})
 }) (jQuery)

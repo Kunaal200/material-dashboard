@@ -104,13 +104,13 @@
                 <h6 class="mb-0">Profile Information</h6>
               </div>
               <div class="col-md-4 text-end">
-                <a href="javascript:;" id="edit-profile" class="inline-form-actions">
+                <a href="javascript:;" class="inline-form-actions">
                   <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
                 </a>
-                <a href="javascript:;" id="save-profile-form" class="btn btn-sm btn-outline-primary d-none inline-form-actions">
+                <a href="javascript:;" class="btn btn-sm btn-outline-primary d-none inline-form-actions inline-form-save-action">
                   <i class="fas fa-check" data-bs-toggle="tooltip" data-bs-placement="top" title="Save Profile"></i>
                 </a>
-                <a href="javascript:;" id="cancel-profile-form" class="btn btn-sm btn-outline-secondary d-none inline-form-actions">
+                <a href="javascript:;" class="btn btn-sm btn-outline-secondary d-none inline-form-actions inline-form-cancel-action">
                   <i class="fas fa-xmark" data-bs-toggle="tooltip" data-bs-placement="top" title="Cancel Profile"></i>
                 </a>
               </div>
@@ -119,25 +119,25 @@
           <div id="profile-info-form" class="card-body p-3 d-none inline-form-wrapper">
             <form role="form" class="text-start" id="editProfileForm" method="POST">
               <div class="input-group input-group-outline my-3">
-                  <label class="form-label" for="email">Bio</label>
+                  <label class="form-label" for="bio">Bio</label>
                   <textarea name="bio" id="bio" class="form-control"></textarea>
                   <label class="error w-100 m-0" for="bio"></label>
               </div>
               <hr class="horizontal gray-light my-4">
               <div class="input-group input-group-outline mb-3">
-                  <label class="form-label" for="pwd">Full Name</label>
+                  <label class="form-label" for="name">Full Name</label>
                   <input type="text" class="form-control" id="name" name="name">
                   <label class="error w-100 m-0" for="name"></label>
               </div>
             </form>
           </div>
           <div id="profile-info-wrapper" class="card-body p-3 inline-info-wrapper">
-            <p class="text-sm">
+            <p class="text-sm" data-card="bio">
               Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality).
             </p>
             <hr class="horizontal gray-light my-4">
             <ul class="list-group">
-              <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; Alec M. Thompson</li>
+              <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Full Name:</strong> &nbsp; <span data-card="name">Alec M. Thompson</span></li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Mobile:</strong> &nbsp; (44) 123 1234 123</li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong> &nbsp; alecthompson@mail.com</li>
               <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Location:</strong> &nbsp; USA</li>
