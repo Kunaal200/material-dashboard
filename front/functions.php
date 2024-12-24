@@ -138,4 +138,23 @@ function get_route(){
 function is_current_route($route = ''){
     return $route === get_route();
 }
+
+function load_template_styles($template){
+    $fileName = str_replace('.php', '', $template);
+    $stylePath = BASEPATH . '/assets/js/pages/'.$fileName . '.css';
+
+    if(file_exists($stylePath)){
+        $styleURL = str_replace(BASEPATH, BASEURL, $stylePath);
+        echo '<link href="'.$styleURL.'" />';
+    }
+}
+
+function load_template_scripts($template){
+    $fileName = str_replace('.php', '', $template);
+    $scriptPath = BASEPATH . '/assets/js/pages/'.$fileName . '.js';
+    if(file_exists($scriptPath)){
+        $scriptURL = str_replace(BASEPATH, BASEURL, $scriptPath);
+        echo "<script src='".$scriptURL."'></script>";
+    }
+}
 ?>

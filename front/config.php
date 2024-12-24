@@ -12,6 +12,8 @@
     $dotenv = Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
     $dotenv->load();
 
+    define('BASEURL', getenv('APP_URL'));
+
     $db = array(
         'mysql' => array(
             'host' => getenv('DB_HOST'),
